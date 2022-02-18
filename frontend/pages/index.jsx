@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Devbg</h1>
+        <Navbar />
       </main>
     </div>
   );
