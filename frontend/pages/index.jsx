@@ -14,6 +14,16 @@ export default function Home() {
     info: 'The information about the post2',
     img: 'https://preview.redd.it/jocfxr2ribz21.png?auto=webp&s=792849308b748d38e589d7a505b8a256f8722b3f',
   },
+  {
+    name: 'My Desktop 3',
+    info: 'The information about the post3',
+    img: 'https://preview.redd.it/jocfxr2ribz21.png?auto=webp&s=792849308b748d38e589d7a505b8a256f8722b3f',
+  },
+  {
+    name: 'My Desktop 4',
+    info: 'The information about the post4',
+    img: 'https://preview.redd.it/jocfxr2ribz21.png?auto=webp&s=792849308b748d38e589d7a505b8a256f8722b3f',
+  },
   ];
 
   Posts.map((post) => console.log(post.name));
@@ -30,9 +40,11 @@ export default function Home() {
         <Navbar />
 
         <h3 className="text-3xl">Popular</h3>
-        { Posts.map((post) => (
-          <Card name={post.name} info={post.info} imgLink={post.img} />
-        ))}
+        <div className="flex flex-wrap m-6 place-content-center">
+          { Posts.map((post) => (
+            <Card name={post.name} info={post.info} imgLink={post.img} />
+          ))}
+        </div>
       </main>
     </div>
   );
