@@ -1,8 +1,23 @@
 import React from 'react';
 import Head from 'next/head';
+import Card from '../components/Card';
 import Navbar from '../components/Navbar';
 
 export default function Home() {
+  const Posts = [{
+    name: 'My Desktop 1',
+    info: 'The information about the post',
+    img: 'http://i2.wp.com/kaosx.us/wp-content/uploads/2014/06/KaOS-Asuka.png',
+  },
+  {
+    name: 'My Desktop 2',
+    info: 'The information about the post2',
+    img: 'https://preview.redd.it/jocfxr2ribz21.png?auto=webp&s=792849308b748d38e589d7a505b8a256f8722b3f',
+  },
+  ];
+
+  Posts.map((post) => console.log(post.name));
+
   return (
     <div>
       <Head>
@@ -13,6 +28,11 @@ export default function Home() {
 
       <main>
         <Navbar />
+
+        <h3 className="text-3xl">Popular</h3>
+        { Posts.map((post) => (
+          <Card name={post.name} info={post.info} imgLink={post.img} />
+        ))}
       </main>
     </div>
   );
